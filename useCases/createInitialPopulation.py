@@ -9,7 +9,7 @@ def createInitialPopulation():
 
 
 def getPs():
-    return initialPopulation #0.65 * (2 ** (0.2*len(bag)))
+    return initialPopulation #1.65 * (2 ** (0.2*len(bag)))
 
 
 def generateIndividuals(tries=0, isHeuristic=False):

@@ -1,9 +1,10 @@
 restriction = 631.3333333333333
 maxActives = 0.1
 incumbent = 0.9
-whitTabu = False
-initialPopulation = 10
-
+withTabu = False
+initialPopulation = 2
+MAX_GENERATIONS = 30
+MUTATION_POINTS = 10
 bag = [
     {"item": 0, "data": {"cost": 53, "bulk": 18}},
     {"item": 1, "data": {"cost": 8, "bulk": 10}},
@@ -50,7 +51,8 @@ bag = [
     {"item": 42, "data": {"cost": 21, "bulk": 28}},
     {"item": 43, "data": {"cost": 24, "bulk": 17}},
     {"item": 44, "data": {"cost": 75, "bulk": 22}},
-    {"item": 45, "data": {"cost": 98, "bulk": 49}}]
+    {"item": 45, "data": {"cost": 98, "bulk": 49}}
+]
 
 sensitivityIndex = [
     {"item": 0, "value": 2.9444444444444446},

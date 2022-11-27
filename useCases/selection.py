@@ -1,6 +1,6 @@
 import random
 
-from bag.data import whitTabu
+from bag.data import withTabu
 from useCases.cross import cross
 from useCases.evaluateFo import evaluateFo
 from useCases.mutation import mutation
@@ -17,17 +17,15 @@ def selection(population):
         father2 = roulette(population, selecteds)
         if father1 is not None and father2 is not None and areBrothers(father1, father2):
             sons = cross(father1, father2)
-            if whitTabu:
+            if withTabu:
                 setTabu(father1)
                 setTabu(father2)
             mutatedSon = mutation(sons[0])
             mutatedSon2 = mutation(sons[1])
             if mutatedSon not in population and evaluateFo(mutatedSon, father1, father2):
-                if mutatedSon not in population:
-                    newGeneration.append(mutatedSon)
+                newGeneration.append(mutatedSon)
             if mutatedSon2 not in population and evaluateFo(mutatedSon2, father1, father2):
-                if mutatedSon2 not in population:
-                    newGeneration.append(mutatedSon2)
+                newGeneration.append(mutatedSon2)
     population = population + newGeneration
     return population
 

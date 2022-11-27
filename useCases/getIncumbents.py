@@ -8,3 +8,4 @@ def getIncumbents(population):
         if checkRestriction(individual, incumbent):
             incumbents.append(individual)
     print(len(incumbents))
+    return incumbents
