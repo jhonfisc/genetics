@@ -16,7 +16,7 @@ def selection(population):
         if father1 is not None and father2 is not None:
             son = cross(father1, father2)
             mutatedSon = mutation(son)
-            if evaluateFo(mutatedSon, father1, father2):
+            if mutatedSon not in population and evaluateFo(mutatedSon, father1, father2):
                 newGeneration.append(mutatedSon)
     population = population + newGeneration
     return population
