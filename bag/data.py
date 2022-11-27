@@ -1,8 +1,8 @@
 restriction = 631.3333333333333
 maxActives = 0.1
-incumbent = 0.9
+incumbent = 0.99
 withTabu = False
-initialPopulation = 2
+initialPopulation = 10
 MAX_GENERATIONS = 30
 MUTATION_POINTS = 10
 ESQUEMA_LEFT = 1

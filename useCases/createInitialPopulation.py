@@ -4,6 +4,8 @@ from bag.data import bag, maxActives, sensitivityIndex, initialPopulation, ESQUE
 from useCases.checkRestriction import checkRestriction
 
 heuCant = 0
+
+
 def createInitialPopulation():
     return [generateIndividuals() for i in range(int(getPs()))]
 

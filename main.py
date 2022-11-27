@@ -15,7 +15,7 @@ if __name__ == '__main__':
         population = selection(population)
         generations += 1
         #sacar incumbente de la generacion
-        print("Generation No: " + str(generations))
+        print("Generation No: " + str(generations) + " Poblacion: " + str(len(population)))
     print(len(population))
     incumbents = getIncumbents(population)
     print(*incumbents, sep="\n")
