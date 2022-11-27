@@ -1,6 +1,6 @@
 import random
 
-from bag.data import bag, maxActives, sensitivityIndex
+from bag.data import bag, maxActives, sensitivityIndex, initialPopulation
 from useCases.checkRestriction import checkRestriction
 
 
@@ -9,7 +9,7 @@ def createInitialPopulation():
 
 
 def getPs():
-    return 40 #0.65 * (2 ** (0.2*len(bag)))
+    return initialPopulation #0.65 * (2 ** (0.2*len(bag)))
 
 
 def generateIndividuals(tries=0, isHeuristic=False):

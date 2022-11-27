@@ -12,7 +12,8 @@ def roulette(population, selecteds):
         if randomValue - it < 0 and individualSelected not in selecteds:
            break
         individualSelected += 1
-    selecteds.append(individualSelected)
+    if individualSelected not in selecteds:
+        selecteds.append(individualSelected)
     return population[individualSelected]
 
 

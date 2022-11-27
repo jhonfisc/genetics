@@ -1,6 +1,8 @@
 restriction = 631.3333333333333
 maxActives = 0.1
-incumbent = 0.7
+incumbent = 0.9
+whitTabu = False
+initialPopulation = 10
 
 bag = [
     {"item": 0, "data": {"cost": 53, "bulk": 18}},

@@ -2,7 +2,7 @@ import random
 
 
 def mutation(individual):
-    points = int(random.uniform(1, 5))
+    points = int(random.uniform(1, 10))
     indv = individual.copy()
     for i in range(points):
         idx = int(random.uniform(1, len(indv)) - 1)

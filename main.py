@@ -11,8 +11,6 @@ MAX_GENERATIONS = 20
 
 if __name__ == '__main__':
     population = createInitialPopulation()
-    print(len(population))
-    print(*population, sep="\n")
     generations = 1
     while generations < MAX_GENERATIONS:
         population = selection(population)
