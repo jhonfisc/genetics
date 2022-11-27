@@ -29,12 +29,7 @@ def getAccumulate(population, total):
 
 
 def getProbsAccumu(population, total):
-    idx = 0
-    accumulate = getAccumulate(population, total)
-    probs = [0.0 for i in range(len(total))]
-    while idx < len(total):
-        probs[idx] = total[idx] / accumulate
-        idx += 1
+    probs = calculatePorbs(population, total)
     probAcummu = [0.0 for i in range(len(probs))]
     idx = 0
     while idx < len(probs):
@@ -44,3 +39,13 @@ def getProbsAccumu(population, total):
             probAcummu[idx] = probs[idx] + probAcummu[idx - 1]
         idx += 1
     return probAcummu
+
+
+def calculatePorbs(population, total):
+    accumulate = getAccumulate(population, total)
+    probs = [0.0 for i in range(len(total))]
+    idx = 0
+    while idx < len(total):
+        probs[idx] = total[idx] / accumulate
+        idx += 1
+    return probs
