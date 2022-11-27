@@ -6,7 +6,7 @@ from useCases.selection import selection
 
 # Press the green button in the gutter to run the script.
 
-MAX_GENERATIONS = 5
+MAX_GENERATIONS = 2
 
 if __name__ == '__main__':
     population = createInitialPopulation()
