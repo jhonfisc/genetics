@@ -5,6 +5,8 @@ withTabu = False
 initialPopulation = 2
 MAX_GENERATIONS = 30
 MUTATION_POINTS = 10
+ESQUEMA_LEFT = 1
+ESQUEMA_RIGHT = 1
 bag = [
     {"item": 0, "data": {"cost": 53, "bulk": 18}},
     {"item": 1, "data": {"cost": 8, "bulk": 10}},
