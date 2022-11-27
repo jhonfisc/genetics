@@ -1,3 +1,6 @@
+restriction = 631.3333333333333
+maxActives = 0.1
+
 bag = [
     {"item": 0, "data": {"cost": 53, "bulk": 18}},
     {"item": 1, "data": {"cost": 8, "bulk": 10}},

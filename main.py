@@ -9,8 +9,8 @@ from useCases.selection import selection
 MAX_GENERATIONS = 5
 
 if __name__ == '__main__':
-    initialPopulation = createInitialPopulation()
-    population = selection(initialPopulation)
+    population = createInitialPopulation()
+    print(len(population))
     generations = 1
     while generations < MAX_GENERATIONS:
         population = selection(population)
