@@ -1,11 +1,11 @@
 import random
 
-from bag.data import withTabu
+from bag.data import withTabu, TABU2
 from useCases.cross import cross
 from useCases.evaluateFo import evaluateFo
 from useCases.mutation import mutation
 from useCases.roulette import roulette
-from useCases.setTabu import setTabu
+from useCases.setTabu import setTabu, checkTabu
 
 
 def selection(population):
@@ -15,7 +15,8 @@ def selection(population):
     for idx in range(int(crosses)):
         father1 = roulette(population, selecteds)
         father2 = roulette(population, selecteds)
-        if father1 is not None and father2 is not None and areBrothers(father1, father2):
+        if father1 is not None and father2 is not None and areBrothers(father1, father2) and not checkTabu(father1) \
+                and not checkTabu(father2):
             sons = cross(father1, father2)
             if withTabu:
                 setTabu(father1)
@@ -33,4 +34,5 @@ def areBrothers(individual1, individual2):
     sum = 0
     for idx in range(len(individual1) - 1):
        sum += 1 if individual1[idx] != individual2[idx] else 0
-    return sum > 2
+    tabu = random.uniform(0, 100)
+    return sum > 2 or tabu <= TABU2

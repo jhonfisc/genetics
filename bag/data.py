@@ -1,12 +1,14 @@
 restriction = 631.3333333333333
 maxActives = 0.1
 incumbent = 0.99
-withTabu = False
-initialPopulation = 10
+withTabu = True
+initialPopulation = 40
 MAX_GENERATIONS = 30
 MUTATION_POINTS = 10
 ESQUEMA_LEFT = 1
 ESQUEMA_RIGHT = 1
+TABU1_GENERATIONS = 3
+TABU2 = 10  # percent
 bag = [
     {"item": 0, "data": {"cost": 53, "bulk": 18}},
     {"item": 1, "data": {"cost": 8, "bulk": 10}},
