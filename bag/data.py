@@ -1,11 +1,11 @@
 restriction = 131
 maxActives = 0.1
-incumbent = 0.90
-withTabu = True
-initialPopulation = 20
-MAX_GENERATIONS = 30
+incumbent = 0.9
+withTabu = False
+initialPopulation = 5
+MAX_GENERATIONS = 15
 MUTATION_POINTS = 5
-ESQUEMA_LEFT = 1
+ESQUEMA_LEFT = 0
 ESQUEMA_RIGHT = 1
 TABU1_GENERATIONS = 3
 TABU2 = 10  # percent

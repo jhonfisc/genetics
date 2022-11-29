@@ -1,6 +1,6 @@
 # This is a sample Python script.
 from bag.data import bag, MAX_GENERATIONS
-from useCases.calculateFo import calculateFo
+from useCases.calculateFo import calculateFo, calculateBulk
 from useCases.createInitialPopulation import createInitialPopulation, heuristicMethod
 from useCases.getIncumbents import getIncumbents
 from useCases.roulette import roulette
@@ -21,5 +21,5 @@ if __name__ == '__main__':
     print(*incumbents, sep="\n")
     incumbentsFo = []
     for it in incumbents:
-        incumbentsFo.append(calculateFo(it))
+        incumbentsFo.append([calculateFo(it), calculateBulk(it)])
     print(*incumbentsFo, sep="\n")

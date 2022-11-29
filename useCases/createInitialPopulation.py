@@ -44,8 +44,8 @@ def generateIndividuals(tries=0, isHeuristic=False):
 
 def heuristicMethod():
     fo = []
-    for it in sensitivityIndex:
-        fo.append(it["value"])
+    for it in bag:
+        fo.append(it["data"]["cost"])
     foCopy = fo.copy()
     foCopy.sort(reverse=True)
     candidate = foCopy[0]
