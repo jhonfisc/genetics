@@ -66,3 +66,20 @@ def heuristicMethod():
         individual[idxRandom] = 1
         numActives += 1
     return individual
+
+
+def getEsquema():
+    fo = []
+    for it in sensitivityIndex:
+        fo.append(it["value"])
+    foCopy = fo.copy()
+    foCopy.sort(reverse=True)
+    candidate = foCopy[0]
+    idx = fo.index(candidate)
+    return idx
+
+def haveEsquema(individual):
+    esquema = getEsquema()
+
+    return individual[esquema] == 1 and individual[esquema ]
+

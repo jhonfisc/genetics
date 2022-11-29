@@ -30,9 +30,10 @@ def selection(population):
     population = population + newGeneration
     return population
 
+
 def areBrothers(individual1, individual2):
     sum = 0
     for idx in range(len(individual1) - 1):
-       sum += 1 if individual1[idx] != individual2[idx] else 0
+        sum += 1 if individual1[idx] != individual2[idx] else 0
     tabu = random.uniform(0, 100)
-    return sum > 2 or tabu <= TABU2
+    return sum > 2 or (tabu <= TABU2 and withTabu)

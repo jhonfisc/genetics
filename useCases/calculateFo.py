@@ -1,10 +1,10 @@
-from bag.data import sensitivityIndex
+from bag.data import sensitivityIndex, bag
 
 
 def calculateFo(individual):
     idx = 0
     fo = 0
     while idx < len(individual):
-        fo += sensitivityIndex[idx]["value"] if individual[idx] == 1 else 0
+        fo += bag[idx]["data"]["cost"] if individual[idx] == 1 else 0
         idx += 1
     return fo
