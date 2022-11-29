@@ -1,4 +1,4 @@
-restriction = 631.3333333333333
+restriction = 131
 maxActives = 0.1
 incumbent = 0.99
 withTabu = True
