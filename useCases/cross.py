@@ -7,7 +7,7 @@ def cross(father1, father2):
     idx = 0
     son1 = [0 for i in range(limit)]
     son2 = [0 for i in range(limit)]
-    for i in range(limit - 1):
+    for i in range(limit):
         son1[idx] = father1[idx] if idx < crossPoint else father2[idx]
         son2[idx] = father2[idx] if idx < crossPoint else father1[idx]
         idx += 1
