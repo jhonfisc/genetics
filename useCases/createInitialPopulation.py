@@ -54,7 +54,7 @@ def heuristicMethod():
     return individual
 
 
-def getEsquemaInd():
+def getEsquemaInd(ran=1):
     fo = []
     for it in bag:
         fo.append(it["data"]["cost"])
@@ -62,15 +62,16 @@ def getEsquemaInd():
     foCopy.sort(reverse=True)
     candidate = foCopy[0]
     individual = [0 for i in range(len(sensitivityIndex))]
-    idx = fo.index(candidate)
-    if 0 < idx < len(fo):
-        for i in range(ESQUEMA_LEFT + 1):
-            if (idx + i) < len(fo):
-                individual[idx + i] = 1
-    if 0 < idx < len(fo):
-        for i in range(ESQUEMA_RIGHT + 1):
-            if (idx - i) > 0:
-                individual[idx - i] = 1
+    if ran == 0:
+        idx = fo.index(candidate)
+        if 0 < idx < len(fo):
+            for i in range(ESQUEMA_LEFT + 1):
+                if (idx + i) < len(fo):
+                    individual[idx + i] = 1
+        if 0 < idx < len(fo):
+            for i in range(ESQUEMA_RIGHT + 1):
+                if (idx - i) > 0:
+                    individual[idx - i] = 1
     return individual
 
 def getEsquema():
@@ -82,9 +83,3 @@ def getEsquema():
     candidate = foCopy[0]
     idx = fo.index(candidate)
     return idx
-
-def haveEsquema(individual):
-    esquema = getEsquema()
-
-    return individual[esquema] == 1 and individual[esquema ]
-

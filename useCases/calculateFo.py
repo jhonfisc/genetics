@@ -9,6 +9,7 @@ def calculateFo(individual):
         idx += 1
     return fo
 
+
 def calculateBulk(individual):
     idx = 0
     fo = 0

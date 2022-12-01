@@ -3,6 +3,7 @@ import random
 from bag.data import withTabu, TABU2, MATING_PROB, IS_GROW_RATE
 from useCases.cross import cross
 from useCases.evaluateFo import evaluateFo
+from useCases.haveEsquema import haveEsquema
 from useCases.mutation import mutation
 from useCases.roulette import roulette
 from useCases.setTabu import setTabu, checkTabu
@@ -25,11 +26,11 @@ def selection(population):
                     setTabu(father2)
                 mutatedSon = mutation(sons[0])
                 mutatedSon2 = mutation(sons[1])
-                if mutatedSon not in population and evaluateFo(mutatedSon, father1, father2):
+                if mutatedSon not in population and evaluateFo(mutatedSon, father1, father2) and haveEsquema(mutatedSon, 1):
                     newGeneration.append(mutatedSon)
                     if not IS_GROW_RATE:
                         population.remove(father1)
-                if mutatedSon2 not in population and evaluateFo(mutatedSon2, father1, father2):
+                if mutatedSon2 not in population and evaluateFo(mutatedSon2, father1, father2) and haveEsquema(mutatedSon2, 1):
                     newGeneration.append(mutatedSon2)
                     if not IS_GROW_RATE:
                         population.remove(father2)
