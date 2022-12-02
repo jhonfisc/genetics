@@ -15,14 +15,14 @@ def graphs(list, i):
 def graphEsquemas(list, i):
     plt.figure(i)
     plt.plot(np.arange(MAX_GENERATIONS - 1), np.array(list))
-    plt.xlabel("Esquemas")
-    plt.ylabel("Generation")
+    plt.ylabel("Esquemas")
+    plt.xlabel("Generation")
     plt.show()
 
 
 def graphIncumbents(list, i):
     plt.figure(i)
     plt.plot(np.arange(MAX_GENERATIONS - 1), np.array(list))
-    plt.xlabel("Best F.O.")
-    plt.ylabel("Generations")
+    plt.ylabel("Best F.O.")
+    plt.xlabel("Generations")
     plt.show()

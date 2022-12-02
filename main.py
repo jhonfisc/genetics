@@ -1,4 +1,5 @@
 # This is a sample Python script.
+from bag.constants import getTabuMemory, init, getTabuMemory2
 from bag.data import bag, MAX_GENERATIONS
 from useCases.calculateFo import calculateFo, calculateBulk
 from useCases.createInitialPopulation import createInitialPopulation, heuristicMethod
@@ -6,9 +7,9 @@ from useCases.getIncumbents import getIncumbents
 from useCases.graphics import graphs
 from useCases.selection import selection
 
-
 # Press the green button in the gutter to run the script.
 results = []
+
 
 def incumbents(poblation, final=0, generation=0):
     global results
@@ -22,6 +23,7 @@ def incumbents(poblation, final=0, generation=0):
 
 
 if __name__ == '__main__':
+    init()
     idx = 0
     fo = 0
     bulk = 0
@@ -34,11 +36,15 @@ if __name__ == '__main__':
     population = createInitialPopulation()
     generations = 1
     while generations < MAX_GENERATIONS:
-        population = selection(population)
+        incumbents(population, 1, generations)
+        pro = 0
+        for it in results:
+            pro += it[2][0][0]
+        population = selection(population, 0) #pro/len(population))
         generations += 1
         #sacar incumbente de la generacion
-        #print("Generation No: " + str(generations) + " Poblacion: " + str(len(population)))
-        incumbents(population, 1, generations)
+        print("Generation No: " + str(generations) + " Poblacion: " + str(len(population)))
+
     result2 = []
     result3 = []
     for it in results:
@@ -46,7 +52,10 @@ if __name__ == '__main__':
         result3.append(it[3][1])
     graphs(result2, 2)
     graphs(result3, 1)
-    #print(*result3, sep="\n")
+    print(*result2, sep="\n")
+    print("---------------------------")
+    print(max(result2))
+    print(*getTabuMemory2(), sep="\n")
 
 
 

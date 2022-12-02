@@ -1,20 +1,22 @@
 restriction = 131
-maxActives = 0.1
+maxActives = 0.2
 incumbent = 0.0
-withTabu = False
-initialPopulation = 100
+withTabu = True
+initialPopulation = 80
 ONLY_SON_BETTER_FATHERS = True
-MAX_GENERATIONS = 5000
-MUTATION_POINTS = 3
+PRO_SON_BETTER_FATHERS = 0
+MAX_GENERATIONS = 200
+MUTATION_POINTS = 5
 ESQUEMA_LEFT = 1
 ESQUEMA_RIGHT = 1
 TABU1_GENERATIONS = 3
-MAX_HEURISTIC_INIT_POP = 10
-ACCEPT_IF_HAVE_ESQUEMA = 20
+PROB_TABU1_GENERATIONS = 60
+MAX_HEURISTIC_INIT_POP = 8
+ACCEPT_IF_HAVE_ESQUEMA = 10
 MATING_PROB = 20  # percent
-IS_GROW_RATE = False
+IS_GROW_RATE = True
 TABU2 = 10  # percent
-TABU3 = 10
+KIL_TABU = 3
 bag = [
     {"item": 0, "data": {"cost": 7.71320643266746, "bulk": 5.475861559192436}},
     {"item": 1, "data": {"cost": 0.207519493594015, "bulk": 8.192869956700687}},
